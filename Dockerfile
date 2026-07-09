@@ -22,17 +22,19 @@ RUN apt-get update && \
         libgl1 \
         git \
         git-lfs \
+        wget \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
 COPY static/comfyui_requirements.txt /tmp/comfyui_requirements.txt
 COPY static/server_requirements.txt /tmp/server_requirements.txt
 COPY static/demo.txt /tmp/demo.txt
-COPY "static/nunchaku-1.2.1+cu13.0torch2.10-cp312-cp312-linux_x86_64.whl" /tmp/
 
 COPY conf /workspace/conf
 
 RUN pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+
+RUN wget -P /tmp https://github.com/nunchaku-ai/nunchaku/releases/download/v1.2.1/nunchaku-1.2.1+cu13.0torch2.10-cp312-cp312-linux_x86_64.whl
 
 RUN python -m pip install /tmp/nunchaku-1.2.1+cu13.0torch2.10-cp312-cp312-linux_x86_64.whl
 
