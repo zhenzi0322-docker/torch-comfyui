@@ -39,3 +39,7 @@ services:
 ```
 docker run --rm --runtime=nvidia nvidia/cuda:12.6.0-base-ubuntu22.04 nvidia-smi
 ```
+
+```
+docker run --rm --runtime=nvidia -e NVIDIA_VISIBLE_DEVICES=0 <镜像> python -c "import torch; print('CUDA可用:', torch.cuda.is_available()); print('GPU数量:', torch.cuda.device_count()); print('PyTorch:', torch.__version__); print('CUDA:', torch.version.cuda)"
+```
