@@ -34,7 +34,7 @@ services:
     restart: unless-stopped
 ```
 
-## 测试是否可用
+## 测试显卡是否可用
 
 ```
 docker run --rm --runtime=nvidia nvidia/cuda:12.6.0-base-ubuntu22.04 nvidia-smi
