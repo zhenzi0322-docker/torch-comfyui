@@ -15,6 +15,15 @@ env:
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - dockerfile: Dockerfile
+            cuda_suffix: cu13.0
+          - dockerfile: Dockerfile.cuda12.8
+            cuda_suffix: cu12.8
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -40,11 +49,11 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
-          file: ./Dockerfile
+          file: ./${{ matrix.dockerfile }}
           push: true
           tags: |
-            ${{ env.REGISTRY }}/${{ env.NAMESPACE }}/${{ env.IMAGE_NAME }}:${{ steps.meta.outputs.TAG }}
-            ${{ env.REGISTRY }}/${{ env.NAMESPACE }}/${{ env.IMAGE_NAME }}:latest
+            ${{ env.REGISTRY }}/${{ env.NAMESPACE }}/${{ env.IMAGE_NAME }}:${{ steps.meta.outputs.TAG }}-${{ matrix.cuda_suffix }}
+            ${{ env.REGISTRY }}/${{ env.NAMESPACE }}/${{ env.IMAGE_NAME }}:latest-${{ matrix.cuda_suffix }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
           platforms: linux/amd64
