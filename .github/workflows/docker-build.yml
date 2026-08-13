@@ -11,6 +11,7 @@ env:
   REGISTRY: registry.cn-shenzhen.aliyuncs.com
   NAMESPACE: zhenzi0322
   IMAGE_NAME: torch-comfyui
+  BUILDX_NO_DEFAULT_ATTESTATIONS: 1
 
 jobs:
   build-and-push:
@@ -53,7 +54,9 @@ jobs:
           context: .
           file: ./${{ matrix.dockerfile }}
           push: true
-          outputs: type=image,oci-mediatypes=false,provenance=false,sbom=false
+          provenance: false
+          sbom: false
+          outputs: type=image,oci-mediatypes=false
           tags: |
             ${{ env.REGISTRY }}/${{ env.NAMESPACE }}/${{ env.IMAGE_NAME }}:${{ steps.meta.outputs.TAG }}-${{ matrix.cuda_suffix }}
             ${{ env.REGISTRY }}/${{ env.NAMESPACE }}/${{ env.IMAGE_NAME }}:latest-${{ matrix.cuda_suffix }}
