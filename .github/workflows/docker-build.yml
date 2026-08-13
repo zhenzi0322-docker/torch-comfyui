@@ -53,7 +53,7 @@ jobs:
           context: .
           file: ./${{ matrix.dockerfile }}
           push: true
-          outputs: type=image,oci-mediatypes=false
+          outputs: type=image,oci-mediatypes=false,provenance=false,sbom=false
           tags: |
             ${{ env.REGISTRY }}/${{ env.NAMESPACE }}/${{ env.IMAGE_NAME }}:${{ steps.meta.outputs.TAG }}-${{ matrix.cuda_suffix }}
             ${{ env.REGISTRY }}/${{ env.NAMESPACE }}/${{ env.IMAGE_NAME }}:latest-${{ matrix.cuda_suffix }}
