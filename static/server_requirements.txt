@@ -40,4 +40,5 @@ netifaces
 ufile
 ucloud-sdk-python3
 tencentcloud-sdk-python
-diffusers==0.38.0
+diffusers==0.39.0
+multibucket
