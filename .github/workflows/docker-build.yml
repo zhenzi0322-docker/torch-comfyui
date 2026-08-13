@@ -53,8 +53,7 @@ jobs:
           context: .
           file: ./${{ matrix.dockerfile }}
           push: true
-          # 关键修复：强制使用docker镜像格式，不生成OCI空manifest
-          format: docker
+          outputs: type=image,oci-mediatypes=false
           tags: |
             ${{ env.REGISTRY }}/${{ env.NAMESPACE }}/${{ env.IMAGE_NAME }}:${{ steps.meta.outputs.TAG }}-${{ matrix.cuda_suffix }}
             ${{ env.REGISTRY }}/${{ env.NAMESPACE }}/${{ env.IMAGE_NAME }}:latest-${{ matrix.cuda_suffix }}
