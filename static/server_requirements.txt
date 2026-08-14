@@ -42,3 +42,4 @@ ucloud-sdk-python3
 tencentcloud-sdk-python
 diffusers==0.39.0
 multibucket
+tensorrt==11.2.1.2
