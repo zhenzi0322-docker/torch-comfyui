@@ -52,6 +52,4 @@ RUN mkdir -p /etc/supervisor/conf.d
 
 RUN cp /workspace/conf/redis.conf /etc/redis/redis.conf
 
-RUN cp /workspace/conf/redis.service /etc/systemd/system/redis.service
-
-RUN systemctl enable redis && systemctl start redis
+RUN mv /workspace/conf/config/redis.conf /etc/supervisor/conf.d/
