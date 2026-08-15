@@ -50,6 +50,6 @@ RUN python -m pip uninstall flash-attn -y && python -m pip install starlette==0.
 
 RUN mkdir -p /etc/supervisor/conf.d
 
-RUN cp /workspace/conf/redis.conf /etc/redis/redis.conf
+RUN mv /workspace/conf/redis.conf /etc/redis/redis.conf
 
-RUN mv /workspace/conf/config/redis.conf /etc/supervisor/conf.d/
+RUN mv /workspace/conf/config/redis-service.conf /etc/supervisor/conf.d/
