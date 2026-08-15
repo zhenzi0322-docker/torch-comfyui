@@ -52,4 +52,4 @@ RUN mkdir -p /etc/supervisor/conf.d
 
 RUN mv /workspace/conf/redis.conf /etc/redis/redis.conf
 
-RUN mv /workspace/conf/config/redis-service.conf /etc/supervisor/conf.d/
+RUN mv /workspace/conf/redis-service.conf /etc/supervisor/conf.d/
