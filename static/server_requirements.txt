@@ -43,3 +43,5 @@ tencentcloud-sdk-python
 diffusers==0.39.0
 multibucket
 tensorrt==11.2.1.2
+maillite
+nvidia-ml-py
