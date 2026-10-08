@@ -1,6 +1,6 @@
-comfyui-frontend-package==1.42.8
-comfyui-workflow-templates==0.9.39
-comfyui-embedded-docs==0.4.3
+comfyui-frontend-package==1.53.6
+comfyui-workflow-templates
+comfyui-embedded-docs==0.5.12
 numpy>=1.25.0
 einops
 transformers>=4.50.3
@@ -18,8 +18,8 @@ alembic
 SQLAlchemy
 filelock
 av>=14.2.0
-comfy-kitchen>=0.2.8
-comfy-aimdo>=0.2.12
+comfy-kitchen==0.2.35
+comfy-aimdo==0.5.5
 requests
 simpleeval>=1.0.0
 blake3
@@ -50,3 +50,6 @@ watchdog
 qwen-vl-utils
 redis
 GitPython
+
+# add
+comfy-angle
