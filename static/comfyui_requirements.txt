@@ -1,6 +1,9 @@
-comfyui-frontend-package==1.53.6
-comfyui-workflow-templates
-comfyui-embedded-docs==0.5.12
+comfyui-frontend-package==1.55.14
+comfyui-workflow-templates==0.11.78
+comfyui-embedded-docs==0.5.13
+torch
+torchsde
+torchvision
 numpy>=1.25.0
 einops
 transformers>=4.50.3
@@ -15,14 +18,15 @@ scipy
 tqdm
 psutil
 alembic
-SQLAlchemy
+SQLAlchemy>=2.0.0
 filelock
-av>=14.2.0
-comfy-kitchen==0.2.35
-comfy-aimdo==0.5.5
+av>=17.0.0
+comfy-kitchen==0.2.37
+comfy-aimdo==0.5.6
 requests
 simpleeval>=1.0.0
 blake3
+cryptography
 torchsde
 torchaudio
 
@@ -31,7 +35,8 @@ kornia>=0.7.1
 spandrel
 pydantic~=2.0
 pydantic-settings~=2.0
-PyOpenGL
+PyOpenGL>=3.1.8
+comfy-angle
 glfw
 facexlib
 segment_anything
@@ -50,6 +55,3 @@ watchdog
 qwen-vl-utils
 redis
 GitPython
-
-# add
-comfy-angle
