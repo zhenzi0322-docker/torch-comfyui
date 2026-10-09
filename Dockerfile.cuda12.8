@@ -23,7 +23,7 @@ RUN apt-get update && \
         git \
         git-lfs \
         wget \
-        vmtouch
+        vmtouch \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
