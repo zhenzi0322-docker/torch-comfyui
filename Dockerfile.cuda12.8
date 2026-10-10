@@ -33,7 +33,7 @@ COPY static/demo.txt /tmp/demo.txt
 
 COPY conf /workspace/conf
 
-RUN pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+RUN pip config set global.index-url https://mirrors.cloud.tencent.com/pypi/simple
 
 RUN wget -P /tmp https://github.com/nunchaku-ai/nunchaku/releases/download/v1.2.1/nunchaku-1.2.1+cu12.8torch2.10-cp312-cp312-linux_x86_64.whl
 

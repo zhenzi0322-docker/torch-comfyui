@@ -24,6 +24,8 @@ jobs:
             cuda_suffix: cu13.0
           - dockerfile: Dockerfile.cuda12.8
             cuda_suffix: cu12.8
+          - dockerfile: Dockerfile.cuda13.2
+            cuda_suffix: cu13.2
 
     steps:
       - name: Checkout code

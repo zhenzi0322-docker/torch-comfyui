@@ -1,4 +1,4 @@
-FROM pytorch/pytorch:2.10.0-cuda13.0-cudnn9-runtime
+FROM pytorch/pytorch:2.14.1-cuda13.2-cudnn9-runtime
 
 ENV HOSTNAME='comfyui-gpu'
 ENV PIP_BREAK_SYSTEM_PACKAGES=1
@@ -35,9 +35,9 @@ COPY conf /workspace/conf
 
 RUN pip config set global.index-url https://mirrors.cloud.tencent.com/pypi/simple
 
-RUN wget -P /tmp https://github.com/nunchaku-ai/nunchaku/releases/download/v1.2.1/nunchaku-1.2.1+cu13.0torch2.10-cp312-cp312-linux_x86_64.whl
+RUN wget -P /tmp https://github.com/nunchaku-ai/nunchaku/releases/download/v1.2.1/nunchaku-1.2.1+cu12.8torch2.10-cp312-cp312-linux_x86_64.whl
 
-RUN python -m pip install /tmp/nunchaku-1.2.1+cu13.0torch2.10-cp312-cp312-linux_x86_64.whl
+RUN python -m pip install /tmp/nunchaku-1.2.1+cu12.8torch2.10-cp312-cp312-linux_x86_64.whl
 
 RUN python -m pip install pip -U && python -m pip install -r /tmp/server_requirements.txt && \
     python -m pip install -r /tmp/comfyui_requirements.txt && \
